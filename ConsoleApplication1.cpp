@@ -10,6 +10,22 @@
 
 using namespace std;
 
+void _list(int n) {
+    cout << "V A R I A N T      3 0.    To exit enter 0." << endl << endl;
+    cout << "! ! ! ENTERING ANOTHER SYMBOLS CAUSES ERRORS AND CRASHING ! ! !" << endl << endl;
+    cout << "Enter the number of exercise:    " << endl << endl << setw(5);
+
+    for (unsigned short i = 1; i <= 45; i++) {
+        if (i % 5 != 0) {
+            cout << i << setw(5);
+        }
+        else {
+            cout << i << setw(5) << endl;
+        }
+    }
+    cout << endl << endl << "Enter here:    ";
+}
+
 void _11e() {   //write an arithmetic expression in an algorithmic language and specify the order of operations.
     double a;
     cout << "Enter side of square" << endl;
@@ -188,14 +204,21 @@ void _23m() { //Write a program for calculating the function y(x) for all differ
 }
 
 void _31e() { //Given natural numbers from 10 to N. Find the smallest digit of an integer decimal number.
-    int n = 0;
+    int n = 0, x = 0, r = 9;
     cout << "Enter N > 10" << endl;
     cin >> n;
     if (n < 10) {
         cout << "Wrong N!"  << endl;
     }
     else {
-        //
+        int N = n;
+        for (; n != 0; n /= 10) {
+            x = n % 10;
+            if (x < r) {
+                r = x;
+            }
+        }
+        cout << "The smallest digit of a " << N << " is number " << r << endl;
     }
 }
 
@@ -215,8 +238,6 @@ void _31m() { //draw up an algorithm diagram and write a program for calculating
     }
     A = pr * sum;
     cout << "The answer is " << setprecision(10) << A << endl;
-
-
 }
 
 void _32e() { //Find the sum of the squares of even numbers in the interval given by the values of the variables m and n.
@@ -256,113 +277,371 @@ void _32m() { //Natural numbers from 0 to n (n<99) and the number m are given. A
     }
 }
 
+void _33() { //
+
+}
+
+void _34e() { //
+
+}
+
+void _34m() { //
+
+}
+
+void _41e() { //
+
+}
+
+void _41m() { //
+
+}
+
+void _42e() { //
+
+}
+
+void _42m() { //
+
+}
+
+void _51e() { //
+
+}
+
+void _51m() { //
+
+}
+
+void _52e() { //
+
+}
+
+void _52m() { //
+
+}
+
+void _61e() { //
+
+}
+
+void _61m() { //
+
+}
+
+void _62e() { //
+
+}
+
+void _62m() { //
+
+}
+
+void _63e() { //
+
+}
+
+void _63m() { //
+
+}
+
+void _71e() { //
+
+}
+
+void _71m() { //
+
+}
+
+void _72e() { //
+
+}
+
+void _72m() { //
+
+}
+
+void _73e() { //
+
+}
+
+void _73m() { //
+
+}
+
+void _81e() { //
+
+}
+
+void _81m() { //
+
+}
+
+void _111e() { //
+
+}
+
+void _111m() { //
+
+}
+
+void _112e() { //
+
+}
+
+void _112m() { //
+
+}
+
+void _113e() { //
+
+}
+
+void _113m() { //
+
+}
+
+
+
 int main() {
     unsigned short n = 1;
-    while ((n != 0) && (n <= 14) && (n >= 0)) {
-        cout << "V A R I A N T      3 0.    To exit enter 0." << endl << endl;
-        cout << "! ! ! ENTERING ANOTHER SYMBOLS CAUSES ERRORS AND CRASHING ! ! !" << endl << endl;
-        cout << "Enter the number of exercise:" << endl;
-        for (unsigned short i = 1; i <= 14; i++) {
-            cout << i << " ";
-        }
-        cout << endl << endl << "Enter here:    ";
+    while ((n != 0) && (n <= 45) && (n >= 0)) {
+        _list(n);
+
         cin >> n;
         switch (n) {
-            case 0: {
-                cout << "Thanks for checking!" << endl << endl << endl;
-                break;}
-            case 1: {
-                _11e();
-                system("pause");
-                system("cls");
-                break;}
-            case 2: {
-                _11m();
-                system("pause");
-                system("cls");
-                break;}
-            case 3: {
-                _12e();
-                system("pause");
-                system("cls");
-                break;}
-            case 4: {
-                _12m();
-                system("pause");
-                system("cls");
-                break;}
-            case 5: {
-                _21e();
-                system("pause");
-                system("cls");
-                break;}
-            case 6: {
-                _21m();
-                system("pause");
-                system("cls");
-                break;}
-            case 7: {
-                _22e();
-                system("pause");
-                system("cls");
-                break;}
-            case 8: {
-                _22m();
-                system("pause");
-                system("cls");
-                break;}
-            case 9: {
-                _23e();
-                system("pause");
-                system("cls");
-                break;}
-            case 10: {
-                _23m();
-                system("pause");
-                system("cls");
-                break;}
-            case 11: {
-                _31e();
-                system("pause");
-                system("cls");
-                break; }
-            case 12: {
-                _31m();
-                system("pause");
-                system("cls");
-                break; }
-            case 13: {
-                _32e();
-                system("pause");
-                system("cls");
-                break; }
-            case 14: {
-                _32m();
-                system("pause");
-                system("cls");
-                break; }
-            default: {
-                cout << "I N V A L I D  N U M B E R!" << endl;
-                system("pause");
-                break;}
+        case 0: {
+            cout << "Thanks for checking!" << endl << endl << endl;
+            break; }
+        case 1: {
+            _11e();
+            system("pause");
+            system("cls");
+            break; }
+        case 2: {
+            _11m();
+            system("pause");
+            system("cls");
+            break; }
+        case 3: {
+            _12e();
+            system("pause");
+            system("cls");
+            break; }
+        case 4: {
+            _12m();
+            system("pause");
+            system("cls");
+            break; }
+        case 5: {
+            _21e();
+            system("pause");
+            system("cls");
+            break; }
+        case 6: {
+            _21m();
+            system("pause");
+            system("cls");
+            break; }
+        case 7: {
+            _22e();
+            system("pause");
+            system("cls");
+            break; }
+        case 8: {
+            _22m();
+            system("pause");
+            system("cls");
+            break; }
+        case 9: {
+            _23e();
+            system("pause");
+            system("cls");
+            break; }
+        case 10: {
+            _23m();
+            system("pause");
+            system("cls");
+            break; }
+        case 11: {
+            _31e();
+            system("pause");
+            system("cls");
+            break; }
+        case 12: {
+            _31m();
+            system("pause");
+            system("cls");
+            break; }
+        case 13: {
+            _32e();
+            system("pause");
+            system("cls");
+            break; }
+        case 14: {
+            _32m();
+            system("pause");
+            system("cls");
+            break; }
+        case 15: {
+            _33();
+            system("pause");
+            system("cls");
+            break; }
+        case 16: {
+            _34e();
+            system("pause");
+            system("cls");
+            break; }
+        case 17: {
+            _34m();
+            system("pause");
+            system("cls");
+            break; }
+        case 18: {
+            _41e();
+            system("pause");
+            system("cls");
+            break; }
+        case 19: {
+            _41m();
+            system("pause");
+            system("cls");
+            break; }
+        case 20: {
+            _42e();
+            system("pause");
+            system("cls");
+            break; }
+        case 21: {
+            _42m();
+            system("pause");
+            system("cls");
+            break; }
+        case 22: {
+            _51e();
+            system("pause");
+            system("cls");
+            break; }
+        case 23: {
+            _51m();
+            system("pause");
+            system("cls");
+            break; }
+        case 24: {
+            _52e();
+            system("pause");
+            system("cls");
+            break; }
+        case 25: {
+            _52m();
+            system("pause");
+            system("cls");
+            break; }
+        case 26: {
+            _61e();
+            system("pause");
+            system("cls");
+            break; }
+        case 27: {
+            _61m();
+            system("pause");
+            system("cls");
+            break; }
+        case 28: {
+            _62e();
+            system("pause");
+            system("cls");
+            break; }
+        case 29: {
+            _62m();
+            system("pause");
+            system("cls");
+            break; }
+        case 30: {
+            _63e();
+            system("pause");
+            system("cls");
+            break; }
+        case 31: {
+            _63m();
+            system("pause");
+            system("cls");
+            break; }
+        case 32: {
+            _71e();
+            system("pause");
+            system("cls");
+            break; }
+        case 33: {
+            _71m();
+            system("pause");
+            system("cls");
+            break; }
+        case 34: {
+            _72e();
+            system("pause");
+            system("cls");
+            break; }
+        case 35: {
+            _72m();
+            system("pause");
+            system("cls");
+            break; }
+        case 36: {
+            _73e();
+            system("pause");
+            system("cls");
+            break; }
+        case 37: {
+            _73m();
+            system("pause");
+            system("cls");
+            break; }
+        case 38: {
+            _81e();
+            system("pause");
+            system("cls");
+            break; }
+        case 39: {
+            _81m();
+            system("pause");
+            system("cls");
+            break; }
+        case 40: {
+            _111e();
+            system("pause");
+            system("cls");
+            break; }
+        case 41: {
+            _111m();
+            system("pause");
+            system("cls");
+            break; }
+        case 42: {
+            _112e();
+            system("pause");
+            system("cls");
+            break; }
+        case 43: {
+            _112m();
+            system("pause");
+            system("cls");
+            break; }
+        case 44: {
+            _113e();
+            system("pause");
+            system("cls");
+            break; }
+        case 45: {
+            _113m();
+            system("pause");
+            system("cls");
+            break; }
+        default: {
+            cout << "I N V A L I D  N U M B E R!" << endl;
+            system("pause");
+            break; }
         }
     }
 }
-
-/* patterns
-
-
-case : {
-            _();
-            system("pause");
-            system("cls");
-            break;}
-            
-
-
-void _23m() { //
-
-}
-
-
-*/
