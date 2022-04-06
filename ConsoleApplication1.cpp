@@ -1,4 +1,4 @@
-﻿//Shaudylin s v ibo-zi-20
+//Shaudylin s v ibo-zi-20
 
 #include <iostream>
 #include <cmath>
@@ -188,11 +188,34 @@ void _23m() { //Write a program for calculating the function y(x) for all differ
 }
 
 void _31e() { //Given natural numbers from 10 to N. Find the smallest digit of an integer decimal number.
-    int x = 0;
-
+    int n = 0;
+    cout << "Enter N > 10" << endl;
+    cin >> n;
+    if (n < 10) {
+        cout << "Wrong N!"  << endl;
+    }
+    else {
+        //
+    }
 }
 
 void _31m() { //draw up an algorithm diagram and write a program for calculating the sum (product) of a finite series. When developing a program, provide for the omission of terms (multipliers) equal to zero or infinity.
+    double A = 0, sum = 0, pr = 1;
+    int k = 0, j = 0, i = 0;
+    cout << "Enter natural k > 0 " << endl;
+    cin >> k;
+    for (j = 1; j <= k; j++) {
+        if ((j != 3) && (j != 4))
+            pr *= (((j - static_cast<double>(4)) * j) / (j - 3));
+        for (i = j; i <= (k + 1); i++) {
+            if (i != 1) {
+                sum += ((pow((i + 5), (1.0 / 3.0))) / (i - 1));
+            }
+        }
+    }
+    A = pr * sum;
+    cout << "The answer is " << setprecision(10) << A << endl;
+
 
 }
 
