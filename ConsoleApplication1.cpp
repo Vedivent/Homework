@@ -277,8 +277,16 @@ void _32m() { //Natural numbers from 0 to n (n<99) and the number m are given. A
     }
 }
 
-void _33() { //
-
+void _33() { //make a program for calculating the sum of n terms of a series according to the condition of the problem.
+    int n = 0, x = 0;
+    double sum = 0;
+    cout << "Enter N and X for sin(N * x^N)+..." << endl;
+    cin >> n >> x;
+    n *= 2;
+    for (short i = 1; i <= n; i+= 2) {
+        sum += sin(i * (pow(x, i)));
+    }
+    cout << "The answer is " << sum << setprecision(10) << endl;
 }
 
 void _34e() { //
