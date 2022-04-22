@@ -289,13 +289,38 @@ void _33() { //make a program for calculating the sum of n terms of a series acc
     cout << "The answer is " << sum << setprecision(10) << endl;
 }
 
-void _34e() { //
-
+void _34e() { //write a flowchart and a program for tabulating a function at a given interval with a step of 0.2 and plot this function.
+    double y, x = 0;
+    cout << "function is: y=3X-2lnX-5" << endl << "interval of X is [1.1 ; 3.1]" << endl << endl;
+    cout << "|" << setw(5) << "    param X" << setw(4) << "|" << setprecision(10) << setw(5) << "    Param Y" << endl << endl;
+    for (x = 1.1; x <= 3.2; x+=0.2) {
+        y = (3 * x - 2 * log(x) - 5);
+       cout << "|" << setw(5) << x << setw(10) << "|" << setprecision(10) << setw(5) << y << endl;
+    }
+    cout << endl;
 }
 
-void _34m() { //
 
+void _34m() { //write a flowchart and a program for calculating a function at a given interval with a step of 0.2 and plot this function.
+    double y, x = 0;
+    cout << "function is: y=3X-2lnX-5" << endl << "interval of X is [1.1 ; 3.1]" << endl << endl;
+    cout << "|" << setw(5) << "    param X" << setw(4) << "|" << setprecision(10) << setw(5) << "    Param Y" << endl << endl;
+    for (x = (-pi/4); x <= ((7*pi)/4); x += 0.2) {
+        if (x<0) {
+            y = cos(2.3 * x - 1);
+        }
+        if ((x >= 0)&&(x <= 2.5)) {
+            y = (3 * log (abs(1-pow(x, 3))));
+        }
+        if  (x>2.5) {
+            y = pow(x, 2);
+        }
+        
+        cout << "|" << setw(5)  << x << setprecision(10)<< setw(10) << "|" << setprecision(10) << setw(5) << y << endl;
+    }
+    cout << endl;
 }
+
 
 void _41e() { //
 
