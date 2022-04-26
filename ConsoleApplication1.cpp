@@ -10,6 +10,8 @@
 
 using namespace std;
 
+# define pi           3.1415  /* pi */
+
 void _list(int n) {
     cout << "V A R I A N T      3 0.    To exit enter 0." << endl << endl;
     cout << "! ! ! ENTERING ANOTHER SYMBOLS CAUSES ERRORS AND CRASHING ! ! !" << endl << endl;
