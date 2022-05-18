@@ -7,6 +7,7 @@
 #include <chrono>
 #include <limits>
 #include <iomanip>
+#include <random>
 
 using namespace std;
 
@@ -150,7 +151,7 @@ void _22e() { //Given a natural number. Determine whether it is even or ends wit
         cout << "incorrect number " << a;
     }
     else if ((a % 2 == 0) || (a % 10 == 7)) {
-        cout << "The number " << a << " is even OR it ends with 7"  << endl;
+        cout << "The number " << a << " is even OR it ends with 7" << endl;
     }
     else {
         cout << "Nope, the number doesn't fit " << endl;
@@ -181,22 +182,22 @@ void _23e() { //write a program for calculating the function for all variants of
     cout << "Select the option number: 1 / 2 / 3" << endl;
     cin >> a;
     switch (a) {
-        case 1: { // R1=6, R2=10, R3=2
-            cout << "R1=6, R2=10, R3=2" << endl;
-            cout << "BOO";
+    case 1: { // R1=6, R2=10, R3=2
+        cout << "R1=6, R2=10, R3=2" << endl;
+        cout << "BOO";
 
-        }
-        case 2: {// R1=3, R2=5, R3=7
-            cout << "R1=3, R2=5, R3=7" << endl;
+    }
+    case 2: {// R1=3, R2=5, R3=7
+        cout << "R1=3, R2=5, R3=7" << endl;
 
-        }
-        case 3: {// R1=4, R2=12, R3=8
-            cout << "R1=4, R2=12, R3=8" << endl;
+    }
+    case 3: {// R1=4, R2=12, R3=8
+        cout << "R1=4, R2=12, R3=8" << endl;
 
-        }
-        default: {
+    }
+    default: {
         cout << "I N V A L I D  O P T I O N!" << endl;
-        }
+    }
     }
 
 }
@@ -210,7 +211,7 @@ void _31e() { //Given natural numbers from 10 to N. Find the smallest digit of a
     cout << "Enter N > 10" << endl;
     cin >> n;
     if (n < 10) {
-        cout << "Wrong N!"  << endl;
+        cout << "Wrong N!" << endl;
     }
     else {
         int N = n;
@@ -271,11 +272,11 @@ void _32m() { //Natural numbers from 0 to n (n<99) and the number m are given. A
                 cout << q << " is larger than M = " << m << endl;
                 break;
             }
-            else if ((q < m)&&(x == n)) {
+            else if ((q < m) && (x == n)) {
                 cout << "There's no numbers larger than M = " << m << endl;
                 break;
             }
-        }   
+        }
     }
 }
 
@@ -285,7 +286,7 @@ void _33() { //make a program for calculating the sum of n terms of a series acc
     cout << "Enter N and X for sin(N * x^N)+..." << endl;
     cin >> n >> x;
     n *= 2;
-    for (short i = 1; i <= n; i+= 2) {
+    for (short i = 1; i <= n; i += 2) {
         sum += sin(i * (pow(x, i)));
     }
     cout << "The answer is " << sum << setprecision(10) << endl;
@@ -295,9 +296,9 @@ void _34e() { //write a flowchart and a program for tabulating a function at a g
     double y, x = 0;
     cout << "function is: y=3X-2lnX-5" << endl << "interval of X is [1.1 ; 3.1]" << endl << endl;
     cout << "|" << setw(5) << "    param X" << setw(4) << "|" << setprecision(10) << setw(5) << "    Param Y" << endl << endl;
-    for (x = 1.1; x <= 3.2; x+=0.2) {
+    for (x = 1.1; x <= 3.2; x += 0.2) {
         y = (3 * x - 2 * log(x) - 5);
-       cout << "|" << setw(5) << x << setw(10) << "|" << setprecision(10) << setw(5) << y << endl;
+        cout << "|" << setw(5) << x << setw(10) << "|" << setprecision(10) << setw(5) << y << endl;
     }
     cout << endl;
 }
@@ -307,33 +308,196 @@ void _34m() { //write a flowchart and a program for calculating a function at a 
     double y, x = 0;
     cout << "function is: y=3X-2lnX-5" << endl << "interval of X is [1.1 ; 3.1]" << endl << endl;
     cout << "|" << setw(5) << "    param X" << setw(4) << "|" << setprecision(10) << setw(5) << "    Param Y" << endl << endl;
-    for (x = (-pi/4); x <= ((7*pi)/4); x += 0.2) {
-        if (x<0) {
+    for (x = (-pi / 4); x <= ((7 * pi) / 4); x += 0.2) {
+        if (x < 0) {
             y = cos(2.3 * x - 1);
         }
-        if ((x >= 0)&&(x <= 2.5)) {
-            y = (3 * log (abs(1-pow(x, 3))));
+        if ((x >= 0) && (x <= 2.5)) {
+            y = (3 * log(abs(1 - pow(x, 3))));
         }
-        if  (x>2.5) {
+        if (x > 2.5) {
             y = pow(x, 2);
         }
-        
-        cout << "|" << setw(5)  << x << setprecision(10)<< setw(10) << "|" << setprecision(10) << setw(5) << y << endl;
+
+        if (x < 0) {
+            cout << "|" << setw(5) << x << setprecision(10) << setw(9) << "|" << setprecision(10) << setw(5) << y << endl;
+        }
+        else
+            cout << "|" << setw(5) << x << setprecision(10) << setw(10) << "|" << setprecision(10) << setw(5) << y << endl;
     }
     cout << endl;
 }
 
 
-void _41e() { //
-
+void _41e() { // Arrays. Make a diagram of the algorithm and a program for solving the problem. An array of real numbers M(12) is given. Determine the sum of the minimum elementand its index.
+    srand((unsigned)time(NULL));
+    int index = 0;
+    float min = 0, sum = 0;
+    double M[12] = {0};
+    bool decision = 0;
+    cout << "Enter the array of real numbers (0) or make it random (1) :" << endl;
+    cin >> decision;
+    if (decision == 0) {
+        for (short int i = 0; i < 12; i++) {
+            cin >> M[i];
+            if (i == 0) {
+                min = M[0];
+            }
+            if (M[i] < min) {
+                min = M[i];
+                sum = i + min;
+                index = i;
+            }
+        }
+    }
+    else {
+        cout << "your array is: " << endl;
+        default_random_engine randEng(time(NULL));
+        uniform_real_distribution<double> randNumb(-100, 100);
+        for (short int i = 0; i < 12; i++) {
+            M[i] = randNumb(randEng);
+            if (i == 0 || M[i] < min) {
+                min = M[0];
+                sum = i + min;
+                index = i;
+            }
+            cout << setw(3) << M[i] << endl;
+        }
+    }
+    cout << setw(3) << "The sum of min Array " << min << " + index " << index << " is: " << sum << endl;
+    delete[]M;
 }
 
-void _41m() { //
-
+void _41m() { // Enter two arrays of real numbers. Determine the maximum elements in each array and swap them.
+    srand((unsigned)time(NULL));
+    bool decision = 0;
+    short int inA = 0, inB = 0, num1 = 0, num2 = 0;
+    double max = 0, add = 0;
+    cout << "Enter the amount of numbers of the FIRST array:" << endl; //FIRST ARRAY
+    cin >> num1;
+    double* ArrA = new double[num1];
+    cout << "Great! Now enter the array of real numbers (0) or make it random (1) :" << endl;
+    cin >> decision;
+    if (decision == 0) {
+        for (short int i = 0; i < num1; i++) {
+            cin >> ArrA[i];
+            if (i == 0 || max < ArrA[i]) {
+                max = ArrA[i];
+                inA = i;
+            }
+        }
+    }
+    else {
+        cout << "your array is: " << endl;
+        default_random_engine randEng(time(NULL));
+        uniform_real_distribution<double> randNumb(-100, 100);
+        for (short int i = 0; i < num1; i++) {
+            ArrA[i] = randNumb(randEng);
+            if (i == 0 || max < ArrA[i]) {
+                max = ArrA[i];
+                inA = i;
+            }
+            cout << setw(3) << ArrA[i] << endl;
+        }
+    }
+    cout << "the max is " << max << endl;
+    decision = 0;
+    cout << "Enter the amount of numbers of the SECOND array:" << endl; //SECOND ARRAY
+    cin >> num2;
+    double* ArrB = new double[num2];
+    cout << "Great! Now enter the array of real numbers (0) or make it random (1) :" << endl;
+    cin >> decision;
+    if (decision == 0) {
+        for (short int i = 0; i < num2; i++) {
+            cin >> ArrB[i];
+            if (i == 0 || max < ArrB[i]) {
+                max = ArrB[i];
+                inB = i;
+            }
+        }
+    }
+    else {
+        cout << "your array is: " << endl;
+        default_random_engine randEng(time(NULL));
+        uniform_real_distribution<double> randNumb(-100, 100);
+        for (short int i = 0; i < num2; i++) {
+            ArrB[i] = randNumb(randEng);
+            if (i == 0 || max < ArrB[i]) {
+                max = ArrB[i];
+                inB = i;
+            }
+            cout << setw(3) << ArrB[i] << endl;
+        }
+    }
+    cout << "the max is " << max << endl;
+    cout << "The Max of the first array " << ArrA[inA] << " in position " << inA+1 << " and of the second array " << ArrB[inB] << " in position " << inB+1 << " were swapped (I swear!!!)" << endl;
+    swap(ArrA[inA], ArrB[inB]);
+    cout << "Wanna check? NO (0) / YES (1) : ";
+    decision = 0;
+    cin >> decision;
+    if (decision == 1) {
+        cout << endl << "The FIRST array:" << endl;
+        for (short int i = 0; i < num1; i++) {
+            cout << setw(3) << ArrA[i] << endl;
+        }
+        cout << endl << "The SECOND array:" << endl;
+        for (short int i = 0; i < num2; i++) {
+            cout << setw(3) << ArrB[i] << endl;
+        }
+    }
+    else {
+        cout << "Thanks for checking!" << endl;
+    }
+    delete[]ArrA;
+    delete[]ArrB;
 }
 
-void _42e() { //
-
+void _42e() { // Find the number of non-negative elements in the second column of the matrix.
+    srand((unsigned)time(NULL));
+    bool decision = 0;
+    short int L = 0, C = 0, counter = 0;
+    cout << "Enter the amount of LINES and COLUMNS of the array:" << endl;
+    cin >> L >> C;
+    if (L <= 0 || C <= 2) {
+        cout << "WRONG NUMBER" << endl;
+        return;
+    }
+    else {
+        double** Arr = new double* [L];
+        for (short int i = 0; i < L; i++) {
+            Arr[i] = new double[C];
+        }
+        cout << "Now enter the array of real numbers (0) or make it random (1) :" << endl;
+        cin >> decision;
+        if (decision == 0) {
+            for (short int i = 0; i < L; i++) {
+                for (short int j = 0; j < C; j++) {
+                    cout << "Enter the " << i << " " << j << " position : " << endl;
+                    cin >> Arr[i][j];
+                }
+            }
+        }
+        else {
+            default_random_engine randEng(time(NULL));
+            uniform_real_distribution<double> randNumb(-100, 100);
+            for (short int i = 0; i < L; i++) {
+                for (short int j = 0; j < C; j++) {
+                    Arr[i][j] = randNumb(randEng);
+                }
+            }
+        }
+        cout << endl << "Your array is : " << endl;
+        for (short int i = 0; i < L; i++) {
+            for (short int j = 0; j < C; j++) {
+                cout << setw(5) << setprecision(5) << Arr[i][j] << "        ";
+            }
+            cout << endl;
+            if (Arr[i][1] >= 0) { counter++; }
+        }
+        cout << endl << "The number of non-negative elements in the second column of the matrix is " << counter << endl;
+        for (int i = 0; i < L; i++)
+            delete[] Arr[i];
+    }
 }
 
 void _42m() { //
