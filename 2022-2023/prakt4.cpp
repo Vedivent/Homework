@@ -1,4 +1,6 @@
-﻿//shaydulin
+//shaydulin
+//prakt 4
+//There's some troubles because I don't know how to enter the array of chars in function "Ins" manually, so, there's an another option - to rewrite everything by your own in the code. But how to do this through console - idk, sry
 
 #include <stdio.h>
 #include <iostream>
@@ -17,16 +19,18 @@ using namespace std;
 void _list(int n);
 void _1();
 void _2();
+void _2_1();
 char* Ins(char* s, const char* s1, unsigned n);
-string random_string(size_t length);
+char* Insert(char* s, const char* s1, unsigned n);
+//string random_string(size_t length);
 
 void _list(int n) {
     cout << "Shaidulin S. V." << endl;
     cout << "V A R I A N T      28 (6).    To exit enter 0." << endl << endl;
     cout << "! ! ! ENTERING ANOTHER SYMBOLS CAUSES ERRORS AND CRASHING ! ! !" << endl << endl;
-    cout << "Enter the number of exercise: 1 or 2 :  " << endl << endl << setw(5);
+    cout << "Enter the number of exercise: 1, 2 or the coorect 2 (3) :  " << endl << endl << setw(5);
 
-    for (unsigned short i = 1; i <= 2; i++) {
+    for (unsigned short i = 1; i <= 3; i++) {
         cout << i << setw(5);
     }
     cout << endl << endl << "Enter here:    ";
@@ -79,18 +83,41 @@ void _2() { //I used dedicated random engine for strings
     }
     else {
         cout << "your array is: " << endl;
-        char** matrix = random_char[n];
+        //char** matrix = random_char[n];
 
     }
+    cout << "Enter the position where u want to \"Insert\" your text : ";
+    cout << "Name of char array | your text | the position";
+    char* cinA = 0; unsigned N = 0;
+    cin >> cinA;
+    cin >> ArrA;
+    cin >> N;
+    cout << "the result : ";
+    Ins(cinA, ArrA, N);
 }
 
+void _2_1() {
+    char text[64] = "Hello !"; //ur array
+    cout << ("%s\n", Insert(text, "World", 6)); //changes here
+}
 
-char* Ins(char* s, const char* s1, unsigned n) {
+char* Ins(char* s, const char* s1, unsigned n) { //mine function
     unsigned lenA = strlen(s);
     unsigned lenA1 = strlen(s1);
     assert(n <= lenA);
     memmove(s + n + lenA1, s + n, lenA - n + 1);
     memcpy(s + n, s1, lenA1);
+    return s;
+}
+
+char* Insert(char* s, const char* s1, unsigned n) { //function for correct exercise
+    unsigned lenS = strlen(s);
+    unsigned lenS1 = strlen(s1);
+    assert(n <= lenS);
+
+    memmove(s + n + lenS1, s + n, lenS - n + 1);
+    memcpy(s + n, s1, lenS1);
+
     return s;
 }
 
@@ -111,10 +138,10 @@ char** random_char(int n) {
     seed_seq seed{ r(), r(), r(), r(), r(), r(), r(), r() };
     shuffle(begin(letters), end(letters), mt19937(seed));
 
-    for (short int i = 0; i <= n; i++) {
+    /*for (short int i = 0; i <= n; i++) {
         matrix[i] = new char[n];
     }
-    return matrix;
+    return matrix;*/
 }
 
 int main()
@@ -135,6 +162,11 @@ int main()
             break; }
         case 2: {
             _2();
+            system("pause");
+            system("cls");
+            break; }
+        case 3: {
+            _2_1();
             system("pause");
             system("cls");
             break; }
