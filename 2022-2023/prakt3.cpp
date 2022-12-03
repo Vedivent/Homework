@@ -1,4 +1,5 @@
 //shaydulin
+//Необхходимо было сделать лишь одно задание, но пытался сделать больше (не вышло)
 #include <iostream>
 #include <cmath>
 #include <math.h>
@@ -20,7 +21,7 @@ void _list(int n) {
     cout << "! ! ! ENTERING ANOTHER SYMBOLS CAUSES ERRORS AND CRASHING ! ! !" << endl << endl;
     cout << "Enter the number of exercise:    (now available only: 1+-, 3, 4)   " << endl << endl << setw(5);
 
-    for (unsigned short i = 1; i <= 12; i++) {
+    for (unsigned short i = 1; i <= 4; i++) {
         cout << i << setw(5);
     }
     cout << endl << endl << "Enter here:    ";
@@ -63,7 +64,7 @@ void _4() {
     cout << "The sum of first natural even numbers is " << k << endl;
 }
 
-void _5() {
+/* void _5() {
 
 }
 
@@ -93,7 +94,7 @@ void _11() {
 
 void _12() {
 
-}
+} */
 
 int main()
 {
@@ -125,7 +126,7 @@ int main()
             system("pause");
             system("cls");
             break; }
-        case 5: {
+/*        case 5: {
             _5();
             system("pause");
             system("cls");
@@ -164,7 +165,7 @@ int main()
             _12();
             system("pause");
             system("cls");
-            break; }
+            break; } */
         default: {
             cout << "I N V A L I D  N U M B E R!" << endl;
             system("pause");
