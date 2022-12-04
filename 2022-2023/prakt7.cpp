@@ -5,6 +5,8 @@
 #include <cstdio>
 #include <iomanip>
 using namespace std;
+//I had simlified the task
+
 
 class Transport
 {
